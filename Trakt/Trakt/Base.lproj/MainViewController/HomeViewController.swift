@@ -12,36 +12,49 @@ protocol LoadContent: class {
     func didLoadContent(success: Bool)
 }
 
-class HomeViewController: UICollectionViewController, LoadContent {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, LoadContent {
 
+    // MARK: - Attributes
+    
     lazy private var viewModel: HomeViewModel = HomeViewModel(delegate: self)
+    
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    // MARK: - ViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         load()
     }
     
-    func load() {
-        showLoader()
-        viewModel.loadContent()
-    }
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    // MARK - UICollectionView
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections()
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->UICollectionViewCell {
         let cell: MovieCell = MovieCell.createCell(collectionView: collectionView, indexPath: indexPath)
         cell.fill(dto: viewModel.dtoForRow(row: indexPath.row))
         return cell
     }
 
     
-    // MARK: LoadContent
+    // MARK: - LoadContent
+    
+    func load() {
+        showLoader()
+        viewModel.loadContent()
+    }
     
     func didLoadContent(success: Bool) {
         if success {

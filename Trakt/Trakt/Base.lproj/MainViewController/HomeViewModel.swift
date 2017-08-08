@@ -18,7 +18,7 @@ class HomeViewModel {
     }
     
     func loadContent() {
-        Request().requestAPI { movies in
+        Request().traktAPI { movies in
             if let movies = movies {
                 self.movies = movies
             }
@@ -38,6 +38,6 @@ class HomeViewModel {
         guard let movie = movies.object(index: row) else {
             return MovieDTO()
         }
-        return MovieDTO(imageURL: "", title: movie.title, year: "\(movie.year)")
+        return MovieDTO(imageURL: movie.logo?.url ?? "", title: movie.title, year: "\(movie.year)")
     }
 }

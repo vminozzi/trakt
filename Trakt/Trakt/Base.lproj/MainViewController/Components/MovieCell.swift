@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct MovieDTO {
     var imageURL = ""
@@ -23,5 +24,13 @@ class MovieCell: UICollectionViewCell {
     func fill(dto: MovieDTO) {
         self.titleLbl.text = dto.title
         self.yearLbl.text = dto.year
+        
+        DispatchQueue.main.async {
+            if let url = URL(string: dto.imageURL) {
+                if let data = NSData(contentsOf: url) as Data? {
+                    self.image.image = UIImage(data: data)
+                }
+            }
+        }
     }
 }

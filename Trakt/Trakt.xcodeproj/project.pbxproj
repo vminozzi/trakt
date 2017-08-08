@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3B8E87CA95BD4A3BA870DC8D /* Pods_Trakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */; };
+		A0245A991F37AA09005B7926 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0245A981F37AA09005B7926 /* Request.swift */; };
+		A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C44091F37B98400F1FAB6 /* Alamofire.framework */; };
+		A05C440F1F37B98400F1FAB6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */; };
+		A05C44101F37B98400F1FAB6 /* Pods_TraktTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */; };
+		A05C44111F37B98400F1FAB6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440C1F37B98400F1FAB6 /* Realm.framework */; };
+		A05C44121F37B98400F1FAB6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */; };
+		A05C44151F37BE8A00F1FAB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */; };
+		A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44161F3947FA00F1FAB6 /* Movie.swift */; };
+		A05C44191F39495500F1FAB6 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44181F39495500F1FAB6 /* Ids.swift */; };
+		A05C441D1F3952BF00F1FAB6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */; };
+		A05C44211F39558B00F1FAB6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44201F39558B00F1FAB6 /* MovieCell.swift */; };
 		A08853631F3681DD006609FF /* TraktTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08853621F3681DD006609FF /* TraktTests.swift */; };
 		A08853781F368358006609FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08853711F368358006609FF /* LaunchScreen.storyboard */; };
 		A08853791F368358006609FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08853721F368358006609FF /* Main.storyboard */; };
 		A088537A1F368358006609FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A08853741F368358006609FF /* Info.plist */; };
 		A088537B1F368358006609FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08853761F368358006609FF /* AppDelegate.swift */; };
 		A088537C1F368358006609FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08853771F368358006609FF /* Assets.xcassets */; };
+		A0B9294D1F39578F00217039 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9294C1F39578F00217039 /* CollectionViewCell+Extension.swift */; };
+		A0B9294F1F39583500217039 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9294E1F39583500217039 /* Array+Extension.swift */; };
+		A0B929511F3958FE00217039 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B929501F3958FE00217039 /* Loader.swift */; };
 		FEBB2613F4297D042E50A5CE /* Pods_TraktTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB5087A4AE6C2D2ECA923B4 /* Pods_TraktTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +47,17 @@
 		7194075855BA26960240E9EB /* Pods-Trakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trakt/Pods-Trakt.debug.xcconfig"; sourceTree = "<group>"; };
 		981C3EDC815FEB369DDC4691 /* Pods-TraktTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraktTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraktTests/Pods-TraktTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trakt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0245A981F37AA09005B7926 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; usesTabs = 0; };
+		A05C44091F37B98400F1FAB6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Trakt-hfngmrtmfupdfgaltjfwznstdgtr/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Trakt-hfngmrtmfupdfgaltjfwznstdgtr/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TraktTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_TraktTests.framework"; sourceTree = "<group>"; };
+		A05C440C1F37B98400F1FAB6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
+		A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A05C44161F3947FA00F1FAB6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A05C44181F39495500F1FAB6 /* Ids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
+		A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A05C44201F39558B00F1FAB6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		A088534A1F3681DC006609FF /* Trakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A088535E1F3681DD006609FF /* TraktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08853621F3681DD006609FF /* TraktTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktTests.swift; sourceTree = "<group>"; };
@@ -42,6 +67,9 @@
 		A08853741F368358006609FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08853761F368358006609FF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08853771F368358006609FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0B9294C1F39578F00217039 /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		A0B9294E1F39583500217039 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		A0B929501F3958FE00217039 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		AD91D4A249F171FDA469E752 /* Pods-TraktTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraktTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraktTests/Pods-TraktTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */,
+				A05C440F1F37B98400F1FAB6 /* ObjectMapper.framework in Frameworks */,
+				A05C44101F37B98400F1FAB6 /* Pods_TraktTests.framework in Frameworks */,
+				A05C44111F37B98400F1FAB6 /* Realm.framework in Frameworks */,
+				A05C44121F37B98400F1FAB6 /* RealmSwift.framework in Frameworks */,
 				3B8E87CA95BD4A3BA870DC8D /* Pods_Trakt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +101,11 @@
 		152CF82976C399B23D0FBC9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A05C44091F37B98400F1FAB6 /* Alamofire.framework */,
+				A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */,
+				A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */,
+				A05C440C1F37B98400F1FAB6 /* Realm.framework */,
+				A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */,
 				9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */,
 				0BB5087A4AE6C2D2ECA923B4 /* Pods_TraktTests.framework */,
 			);
@@ -83,6 +121,25 @@
 				AD91D4A249F171FDA469E752 /* Pods-TraktTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A05C44131F37BE6400F1FAB6 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */,
+				A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */,
+				A05C441F1F39557600F1FAB6 /* Components */,
+			);
+			name = HomeViewController;
+			path = Base.lproj/MainViewController;
+			sourceTree = "<group>";
+		};
+		A05C441F1F39557600F1FAB6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A05C44201F39558B00F1FAB6 /* MovieCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A08853411F3681DC006609FF = {
@@ -117,7 +174,7 @@
 		A088536D1F368358006609FF /* Trakt */ = {
 			isa = PBXGroup;
 			children = (
-				A088536E1F368358006609FF /* Extensions */,
+				A05C44131F37BE6400F1FAB6 /* HomeViewController */,
 				A088536F1F368358006609FF /* Model */,
 				A08853701F368358006609FF /* Storyboard */,
 				A08853731F368358006609FF /* Core */,
@@ -130,14 +187,19 @@
 		A088536E1F368358006609FF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0B9294C1F39578F00217039 /* CollectionViewCell+Extension.swift */,
+				A0B9294E1F39583500217039 /* Array+Extension.swift */,
+				A0B929501F3958FE00217039 /* Loader.swift */,
 			);
 			name = Extensions;
-			path = Base.lproj/Extensions;
+			path = ../Base.lproj/Extensions;
 			sourceTree = "<group>";
 		};
 		A088536F1F368358006609FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A05C44161F3947FA00F1FAB6 /* Movie.swift */,
+				A05C44181F39495500F1FAB6 /* Ids.swift */,
 			);
 			name = Model;
 			path = Base.lproj/Model;
@@ -156,6 +218,7 @@
 		A08853731F368358006609FF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A0245A981F37AA09005B7926 /* Request.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -163,6 +226,7 @@
 		A08853751F368358006609FF /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				A088536E1F368358006609FF /* Extensions */,
 				A08853761F368358006609FF /* AppDelegate.swift */,
 				A08853771F368358006609FF /* Assets.xcassets */,
 			);
@@ -374,7 +438,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05C44211F39558B00F1FAB6 /* MovieCell.swift in Sources */,
+				A05C44151F37BE8A00F1FAB6 /* HomeViewController.swift in Sources */,
+				A05C441D1F3952BF00F1FAB6 /* HomeViewModel.swift in Sources */,
+				A0B9294F1F39583500217039 /* Array+Extension.swift in Sources */,
+				A0B929511F3958FE00217039 /* Loader.swift in Sources */,
 				A088537B1F368358006609FF /* AppDelegate.swift in Sources */,
+				A0B9294D1F39578F00217039 /* CollectionViewCell+Extension.swift in Sources */,
+				A05C44191F39495500F1FAB6 /* Ids.swift in Sources */,
+				A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */,
+				A0245A991F37AA09005B7926 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +571,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H6R55LXW96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = Trakt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -513,6 +592,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H6R55LXW96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = Trakt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -573,6 +658,7 @@
 				A08853691F3681DD006609FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A088536A1F3681DD006609FF /* Build configuration list for PBXNativeTarget "TraktTests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +667,7 @@
 				A088536C1F3681DD006609FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

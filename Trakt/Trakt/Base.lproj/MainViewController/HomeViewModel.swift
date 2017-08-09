@@ -11,7 +11,7 @@ import Foundation
 typealias Imagelala = [Int: String]
 
 class HomeViewModel {
-
+    
     private weak var delegate: LoadContent?
     private var movies = [Movie]()
     private var resultMovies = [Movie]()
@@ -20,7 +20,7 @@ class HomeViewModel {
     private var lala = Imagelala()
     
     private var page = 1
-    private var shouldMakeRequest = true
+    var shouldMakeRequest = true
     
     
     init(delegate: LoadContent) {
@@ -32,8 +32,7 @@ class HomeViewModel {
             if let movies = movies {
                 self.shouldMakeRequest = movies.count > 0
                 movies.forEach { self.movies.append($0) }
-                self.imagesRequest()
-                
+                self.imagesRequest(movies: movies)
             }
             self.delegate?.didLoadContent(success: movies != nil)
         }
@@ -47,23 +46,23 @@ class HomeViewModel {
     }
     
     func seachRequest(text: String)  {
+        shouldMakeRequest = false
         if text.characters.count > 2 {
             request.searchMovie(query: text) { movies in
                 if let movies = movies {
                     self.resultMovies = movies
-                    self.imagesRequest()
+                    self.imagesRequest(movies: movies)
                     self.delegate?.didLoadContent(success: true)
                 }
             }
         } else if  text.characters.count == 0 {
+            shouldMakeRequest = true
             resultMovies.removeAll()
             delegate?.didLoadContent(success: true)
-
         }
     }
     
-    func imagesRequest() {
-        let movies = resultMovies.count > 0 ? resultMovies : self.movies
+    func imagesRequest(movies: [Movie]) {
         movies.forEach { movie in request.getImages(traktId: movie.ids?.tmdb, completion: { imageURL in
             if let tmdb = movie.ids?.tmdb, let imageURL = imageURL {
                 self.lala[tmdb] = imageURL

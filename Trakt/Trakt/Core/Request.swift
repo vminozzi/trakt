@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
 
 typealias JSONDictionary = [String: Any]
 
@@ -15,6 +16,7 @@ class Request {
     
     private let traktAPI = "https://api.trakt.tv/movies/popular"
     private let imageURL = "https://api.themoviedb.org/3/movie/"
+    private let searchURL = "https://api.trakt.tv/search/movie"
     private let imageAPIKey = "fabd1d13e13b8b25c567f0e097a4cb70"
     
     let traktHeaders: HTTPHeaders = [
@@ -23,8 +25,9 @@ class Request {
         "trakt-api-key": "5afd26eef7ad7f8112f54ea2a1dd300e247c546fc5000e17b371910b7f19fc10"
     ]
     
-    func getMovies(completion: @escaping ((_ movies: [Movie]?) -> ())) {
-        Alamofire.request(traktAPI, headers: traktHeaders).responseJSON { response in
+    func getMovies(page: Int, completion: @escaping ((_ movies: [Movie]?) -> ())) {
+        Alamofire.request(traktAPI, parameters: ["page": "\(page)", "limit": "10"],
+                          headers: traktHeaders).responseJSON { response in
             if let _ = response.result.error {
                 completion(nil)
                 return
@@ -53,6 +56,23 @@ class Request {
             
             if let json = response.result.value as? JSONDictionary, let imageURL = json["poster_path"] as? String {
                 completion(imageURL)
+                return
+            }
+            completion(nil)
+        }
+    }
+    
+    func searchMovie(query: String, completion: @escaping ((_ movies: [Movie]?) -> ())) {
+        Alamofire.request(searchURL, parameters: ["query": query], headers: traktHeaders).responseJSON { response in
+            if let _ = response.result.error {
+                completion(nil)
+                return
+            }
+            
+            if let json = response.result.value as? [JSONDictionary] {
+                var movies = [Movie]()
+                json.forEach { movies.append(Movie(searchMap: Map(mappingType: .fromJSON, JSON: $0)) ?? Movie()) }
+                completion(movies)
                 return
             }
             completion(nil)

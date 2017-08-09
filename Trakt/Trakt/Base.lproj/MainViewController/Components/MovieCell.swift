@@ -22,11 +22,13 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
     var traktId: Int?
+    var imageURL: String?
     
     func fill(dto: MovieDTO) {
         titleLbl.text = dto.title
         yearLbl.text = dto.year
         traktId = dto.traktId
+        imageURL = dto.imageURL
         fillImage(imageURL: dto.imageURL)
     }
     

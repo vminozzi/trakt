@@ -13,7 +13,7 @@ protocol LoadContent: class {
     func didLoadImage(imageURL: String?, traktId: Int?)
 }
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, LoadContent {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, LoadContent {
 
     // MARK: - Attributes
     
@@ -50,6 +50,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->UICollectionViewCell {
         let cell: MovieCell = MovieCell.createCell(collectionView: collectionView, indexPath: indexPath)
         cell.fill(dto: viewModel.dtoForRow(row: indexPath.row))
+        
+        
+        if indexPath.row == viewModel.numberOfRows() - 1 {
+            showLoader()
+            viewModel.loadMore()
+        }
+        
+        
         return cell
     }
     
@@ -75,5 +83,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 movieCell.fillImage(imageURL: imageURL)
             }
         }
+    }
+    
+    // MARK: - UISearchBarDelegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.seachRequest(text: searchText)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }

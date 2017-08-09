@@ -19,6 +19,12 @@ struct Movie: Mappable {
         
     }
     
+    init?(searchMap: Map) {
+        title <- searchMap["movie.title"]
+        year <- searchMap["movie.year"]
+        ids <- searchMap["movie.ids"]
+    }
+    
     init?(map: Map) {
         mapping(map: map)
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E0EA9BB1F3A1D2F0084149F /* HDMovieLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0EA9BA1F3A1D2F0084149F /* HDMovieLogo.swift */; };
 		3B8E87CA95BD4A3BA870DC8D /* Pods_Trakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */; };
 		A0245A991F37AA09005B7926 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0245A981F37AA09005B7926 /* Request.swift */; };
 		A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C44091F37B98400F1FAB6 /* Alamofire.framework */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		0BB5087A4AE6C2D2ECA923B4 /* Pods_TraktTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraktTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E0EA9BA1F3A1D2F0084149F /* HDMovieLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDMovieLogo.swift; sourceTree = "<group>"; };
 		5152C57045B350ADEAA9C951 /* Pods-Trakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trakt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trakt/Pods-Trakt.release.xcconfig"; sourceTree = "<group>"; };
 		7194075855BA26960240E9EB /* Pods-Trakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trakt/Pods-Trakt.debug.xcconfig"; sourceTree = "<group>"; };
 		981C3EDC815FEB369DDC4691 /* Pods-TraktTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraktTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraktTests/Pods-TraktTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 			children = (
 				A05C44161F3947FA00F1FAB6 /* Movie.swift */,
 				A05C44181F39495500F1FAB6 /* Ids.swift */,
-				1E0EA9BA1F3A1D2F0084149F /* HDMovieLogo.swift */,
 			);
 			name = Model;
 			path = Base.lproj/Model;
@@ -458,7 +455,6 @@
 				A0B9294D1F39578F00217039 /* CollectionViewCell+Extension.swift in Sources */,
 				A05C44191F39495500F1FAB6 /* Ids.swift in Sources */,
 				A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */,
-				1E0EA9BB1F3A1D2F0084149F /* HDMovieLogo.swift in Sources */,
 				A0245A991F37AA09005B7926 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

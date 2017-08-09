@@ -8,6 +8,7 @@ target 'Trakt' do
 	pod 'RealmSwift'
 	pod 'Alamofire'
 	pod 'ObjectMapper'
+    pod 'Kingfisher'
 
   target 'TraktTests' do
     inherit! :search_paths

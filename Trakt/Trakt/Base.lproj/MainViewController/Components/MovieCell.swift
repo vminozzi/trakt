@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import Alamofire
+import Kingfisher
 
 struct MovieDTO {
-    var imageURL = ""
+    var imageURL: String?
     var title = ""
     var year = ""
+    var traktId: Int?
 }
 
 class MovieCell: UICollectionViewCell {
@@ -20,17 +21,18 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
+    var traktId: Int?
     
     func fill(dto: MovieDTO) {
-        self.titleLbl.text = dto.title
-        self.yearLbl.text = dto.year
-        
-        DispatchQueue.main.async {
-            if let url = URL(string: dto.imageURL) {
-                if let data = NSData(contentsOf: url) as Data? {
-                    self.image.image = UIImage(data: data)
-                }
-            }
+        titleLbl.text = dto.title
+        yearLbl.text = dto.year
+        traktId = dto.traktId
+        fillImage(imageURL: dto.imageURL)
+    }
+    
+    func fillImage(imageURL: String?) {
+        if let imageURL = imageURL {
+            self.image.kf.setImage(with: URL(string: imageURL.addIamgePath()))
         }
     }
 }

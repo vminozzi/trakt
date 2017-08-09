@@ -14,7 +14,6 @@ struct Movie: Mappable {
     var title = ""
     var year = 0
     var ids: Ids?
-    var logo: HDMovieLogo?
     
     init() {
         

@@ -10,9 +10,10 @@ import UIKit
 
 protocol LoadContent: class {
     func didLoadContent(success: Bool)
+    func didLoadImage(imageURL: String?, traktId: Int?)
 }
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, LoadContent {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, LoadContent {
 
     // MARK: - Attributes
     
@@ -31,6 +32,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         load()
     }
     
+    func load() {
+        showLoader()
+        viewModel.loadContent()
+    }
     
     // MARK - UICollectionView
     
@@ -47,20 +52,27 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.fill(dto: viewModel.dtoForRow(row: indexPath.row))
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.width / 2) - 15, height: 230)
+    }
 
     
     // MARK: - LoadContent
-    
-    func load() {
-        showLoader()
-        viewModel.loadContent()
-    }
     
     func didLoadContent(success: Bool) {
         if success {
             DispatchQueue.main.async {
                 self.dismissLoader()
                 self.collectionView?.reloadData()
+            }
+        }
+    }
+    
+    func didLoadImage(imageURL: String?, traktId: Int?) {
+        if let imageURL = imageURL, let traktId = traktId, let movieCells = collectionView.visibleCells as? [MovieCell], let movieCell = movieCells.filter ({ $0.traktId == traktId }).first {
+            DispatchQueue.main.async {
+                movieCell.fillImage(imageURL: imageURL)
             }
         }
     }

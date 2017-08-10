@@ -8,26 +8,44 @@
 
 import Foundation
 
-typealias Imagelala = [Int: String]
+protocol FavoriteDelegate: class {
+    func didFavorite(trakId: Int)
+}
 
-class HomeViewModel {
+typealias ImageCache = [Int: String]
+
+class HomeViewModel: FavoriteDelegate {
 
     private weak var delegate: LoadContent?
+    private weak var favoriteDelegate: LoadFavorite?
+    
     private var movies = [Movie]()
     private var resultMovies = [Movie]()
     private var request = Request()
+    private var favoriteManager = FavoriteManager()
+    private var favorites: [Favorite]?
     
-    private var lala = Imagelala()
+    private var imageCache = ImageCache() 
     
     private var page = 1
     private var shouldMakeRequest = true
     
     
-    init(delegate: LoadContent) {
+    init(delegate: LoadContent, favoriteDelegate: LoadFavorite) {
         self.delegate = delegate
+        self.favoriteDelegate = favoriteDelegate
+    }
+    
+    func loadFavorites() {
+        if let favorites = self.favorites, let newFavorites = favoriteManager.getAllFavorites(), favorites != newFavorites {
+            self.favorites = newFavorites
+            favoriteDelegate?.didLoadFavorites()
+        }
     }
     
     func loadContent() {
+        favorites = favoriteManager.getAllFavorites()
+        
         request.getMovies(page: page) { movies in
             if let movies = movies {
                 self.shouldMakeRequest = movies.count > 0
@@ -66,7 +84,7 @@ class HomeViewModel {
         let movies = resultMovies.count > 0 ? resultMovies : self.movies
         movies.forEach { movie in request.getImages(traktId: movie.ids?.tmdb, completion: { imageURL in
             if let tmdb = movie.ids?.tmdb, let imageURL = imageURL {
-                self.lala[tmdb] = imageURL
+                self.imageCache[tmdb] = imageURL
                 self.delegate?.didLoadImage(imageURL: imageURL, traktId: movie.ids?.tmdb)
             }
         }) }
@@ -84,6 +102,28 @@ class HomeViewModel {
         guard let movie =  resultMovies.count > 0 ? resultMovies.object(index: row) : movies.object(index: row), let tmdb = movie.ids?.tmdb else {
             return MovieDTO()
         }
-        return MovieDTO(imageURL: lala[tmdb] ?? "", title: movie.title, year: "\(movie.year)", traktId: movie.ids?.tmdb)
+        
+        
+        return MovieDTO(imageURL: imageCache[tmdb] ?? "",
+                        title: movie.title,
+                        year: "\(movie.year)",
+                        traktId: movie.ids?.tmdb,
+                        isSelected: favorites?.filter { $0.traktId == movie.ids?.tmdb ?? 0 }.count ?? 0 > 0,
+                        delegate: self)
+    }
+    
+    // MARK - FavoriteDelegate
+    
+    func didFavorite(trakId: Int) {
+        if let favorite = favorites?.filter ({ $0.traktId == trakId }).first {
+            favoriteManager.remove(favorite: favorite)
+            favorites = favoriteManager.getAllFavorites()
+            return
+        }
+        
+        if let movie = movies.filter ({ $0.ids?.tmdb == trakId }).first {
+            favoriteManager.save(movie: movie, imageURL: imageCache[trakId] ?? "")
+            favorites = favoriteManager.getAllFavorites()
+        }
     }
 }

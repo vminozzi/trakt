@@ -13,12 +13,11 @@ protocol LoadContent: class {
     func didLoadImage(imageURL: String?, traktId: Int?)
 }
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, LoadContent {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, LoadContent, LoadFavorite {
 
     // MARK: - Attributes
     
-    lazy private var viewModel: HomeViewModel = HomeViewModel(delegate: self)
-    
+    lazy private var viewModel: HomeViewModel = HomeViewModel(delegate: self, favoriteDelegate: self)
     
     // MARK: - IBOutlet
     
@@ -29,7 +28,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.navigationItem.title = "Trakt"
         load()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadFavorites()
     }
     
     func load() {
@@ -74,6 +79,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.dismissLoader()
                 self.collectionView?.reloadData()
             }
+        }
+    }
+    
+    // MARK: - LoadFavorite
+    
+    func didLoadFavorites() {
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
         }
     }
     

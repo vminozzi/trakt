@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		3B8E87CA95BD4A3BA870DC8D /* Pods_Trakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */; };
+		A01432811F3BDEB4001B64E6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014327E1F3BDEB4001B64E6 /* MovieCell.swift */; };
+		A01432821F3BDEB4001B64E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014327F1F3BDEB4001B64E6 /* HomeViewController.swift */; };
+		A01432831F3BDEB4001B64E6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01432801F3BDEB4001B64E6 /* HomeViewModel.swift */; };
+		A01432851F3BDECB001B64E6 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01432841F3BDECB001B64E6 /* FavoriteViewController.swift */; };
+		A01432871F3BDEE4001B64E6 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01432861F3BDEE4001B64E6 /* FavoriteViewModel.swift */; };
+		A01432891F3BE121001B64E6 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01432881F3BE121001B64E6 /* Favorite.swift */; };
+		A014328B1F3BE1D0001B64E6 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014328A1F3BE1D0001B64E6 /* FavoriteManager.swift */; };
 		A0245A991F37AA09005B7926 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0245A981F37AA09005B7926 /* Request.swift */; };
 		A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C44091F37B98400F1FAB6 /* Alamofire.framework */; };
 		A05C440F1F37B98400F1FAB6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */; };
 		A05C44101F37B98400F1FAB6 /* Pods_TraktTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */; };
 		A05C44111F37B98400F1FAB6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440C1F37B98400F1FAB6 /* Realm.framework */; };
 		A05C44121F37B98400F1FAB6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */; };
-		A05C44151F37BE8A00F1FAB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */; };
 		A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44161F3947FA00F1FAB6 /* Movie.swift */; };
 		A05C44191F39495500F1FAB6 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44181F39495500F1FAB6 /* Ids.swift */; };
-		A05C441D1F3952BF00F1FAB6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */; };
-		A05C44211F39558B00F1FAB6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44201F39558B00F1FAB6 /* MovieCell.swift */; };
 		A08853631F3681DD006609FF /* TraktTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08853621F3681DD006609FF /* TraktTests.swift */; };
 		A08853781F368358006609FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08853711F368358006609FF /* LaunchScreen.storyboard */; };
 		A08853791F368358006609FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08853721F368358006609FF /* Main.storyboard */; };
@@ -49,17 +53,21 @@
 		7194075855BA26960240E9EB /* Pods-Trakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trakt/Pods-Trakt.debug.xcconfig"; sourceTree = "<group>"; };
 		981C3EDC815FEB369DDC4691 /* Pods-TraktTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraktTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraktTests/Pods-TraktTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E758808669B958A7CE6FD5F /* Pods_Trakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trakt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A014327E1F3BDEB4001B64E6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		A014327F1F3BDEB4001B64E6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A01432801F3BDEB4001B64E6 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A01432841F3BDECB001B64E6 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		A01432861F3BDEE4001B64E6 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		A01432881F3BE121001B64E6 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		A014328A1F3BE1D0001B64E6 /* FavoriteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		A0245A981F37AA09005B7926 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; usesTabs = 0; };
 		A05C44091F37B98400F1FAB6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Trakt-hfngmrtmfupdfgaltjfwznstdgtr/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Trakt-hfngmrtmfupdfgaltjfwznstdgtr/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TraktTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_TraktTests.framework"; sourceTree = "<group>"; };
 		A05C440C1F37B98400F1FAB6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
 		A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
-		A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A05C44161F3947FA00F1FAB6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A05C44181F39495500F1FAB6 /* Ids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
-		A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A05C44201F39558B00F1FAB6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		A088534A1F3681DC006609FF /* Trakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A088535E1F3681DD006609FF /* TraktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08853621F3681DD006609FF /* TraktTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktTests.swift; sourceTree = "<group>"; };
@@ -129,21 +137,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A05C44131F37BE6400F1FAB6 /* HomeViewController */ = {
+		A014327A1F3BDEB4001B64E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A05C44141F37BE8A00F1FAB6 /* HomeViewController.swift */,
-				A05C441C1F3952BF00F1FAB6 /* HomeViewModel.swift */,
-				A05C441F1F39557600F1FAB6 /* Components */,
+				A014327C1F3BDEB4001B64E6 /* MainViewController */,
+				A014327B1F3BDEB4001B64E6 /* FavoriteViewController */,
 			);
-			name = HomeViewController;
-			path = Base.lproj/MainViewController;
+			name = Controllers;
+			path = Base.lproj/Controllers;
 			sourceTree = "<group>";
 		};
-		A05C441F1F39557600F1FAB6 /* Components */ = {
+		A014327B1F3BDEB4001B64E6 /* FavoriteViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A05C44201F39558B00F1FAB6 /* MovieCell.swift */,
+				A01432841F3BDECB001B64E6 /* FavoriteViewController.swift */,
+				A01432861F3BDEE4001B64E6 /* FavoriteViewModel.swift */,
+			);
+			path = FavoriteViewController;
+			sourceTree = "<group>";
+		};
+		A014327C1F3BDEB4001B64E6 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A014327F1F3BDEB4001B64E6 /* HomeViewController.swift */,
+				A01432801F3BDEB4001B64E6 /* HomeViewModel.swift */,
+				A014327D1F3BDEB4001B64E6 /* Components */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		A014327D1F3BDEB4001B64E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A014327E1F3BDEB4001B64E6 /* MovieCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -180,8 +206,8 @@
 		A088536D1F368358006609FF /* Trakt */ = {
 			isa = PBXGroup;
 			children = (
-				A05C44131F37BE6400F1FAB6 /* HomeViewController */,
 				A088536F1F368358006609FF /* Model */,
+				A014327A1F3BDEB4001B64E6 /* Controllers */,
 				A08853701F368358006609FF /* Storyboard */,
 				A08853731F368358006609FF /* Core */,
 				A08853751F368358006609FF /* Others */,
@@ -207,6 +233,7 @@
 			children = (
 				A05C44161F3947FA00F1FAB6 /* Movie.swift */,
 				A05C44181F39495500F1FAB6 /* Ids.swift */,
+				A01432881F3BE121001B64E6 /* Favorite.swift */,
 			);
 			name = Model;
 			path = Base.lproj/Model;
@@ -226,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				A0245A981F37AA09005B7926 /* Request.swift */,
+				A014328A1F3BE1D0001B64E6 /* FavoriteManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -445,17 +473,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05C44211F39558B00F1FAB6 /* MovieCell.swift in Sources */,
-				A05C44151F37BE8A00F1FAB6 /* HomeViewController.swift in Sources */,
-				A05C441D1F3952BF00F1FAB6 /* HomeViewModel.swift in Sources */,
+				A014328B1F3BE1D0001B64E6 /* FavoriteManager.swift in Sources */,
 				A0B9294F1F39583500217039 /* Array+Extension.swift in Sources */,
+				A01432891F3BE121001B64E6 /* Favorite.swift in Sources */,
+				A01432831F3BDEB4001B64E6 /* HomeViewModel.swift in Sources */,
 				A0B929551F3AB1C900217039 /* String+ImageRender.swift in Sources */,
+				A01432811F3BDEB4001B64E6 /* MovieCell.swift in Sources */,
 				A0B929511F3958FE00217039 /* Loader.swift in Sources */,
 				A088537B1F368358006609FF /* AppDelegate.swift in Sources */,
+				A01432821F3BDEB4001B64E6 /* HomeViewController.swift in Sources */,
 				A0B9294D1F39578F00217039 /* CollectionViewCell+Extension.swift in Sources */,
 				A05C44191F39495500F1FAB6 /* Ids.swift in Sources */,
 				A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */,
+				A01432851F3BDECB001B64E6 /* FavoriteViewController.swift in Sources */,
 				A0245A991F37AA09005B7926 /* Request.swift in Sources */,
+				A01432871F3BDEE4001B64E6 /* FavoriteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

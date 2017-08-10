@@ -14,27 +14,43 @@ struct MovieDTO {
     var title = ""
     var year = ""
     var traktId: Int?
+    var isSelected = false
+    weak var delegate: FavoriteDelegate?
 }
 
 class MovieCell: UICollectionViewCell {
     
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
     var traktId: Int?
-    var imageURL: String?
+    
+    private weak var delegate: FavoriteDelegate?
     
     func fill(dto: MovieDTO) {
+        delegate = dto.delegate
+        image.kf.indicatorType = .activity
+        image.kf.indicator?.startAnimatingView()
         titleLbl.text = dto.title
         yearLbl.text = dto.year
         traktId = dto.traktId
-        imageURL = dto.imageURL
+        favoriteButton.isSelected = dto.isSelected
         fillImage(imageURL: dto.imageURL)
     }
     
     func fillImage(imageURL: String?) {
         if let imageURL = imageURL {
-            self.image.kf.setImage(with: URL(string: imageURL.addIamgePath()))
+            image.kf.setImage(with: URL(string: imageURL.addIamgePath()), completionHandler: { _,_,_,_ in
+                self.image.kf.indicator?.stopAnimatingView()
+            })
+        }
+    }
+    
+    @IBAction func favorite() {
+        if let traktId = traktId {
+            delegate?.didFavorite(trakId: traktId)
+            favoriteButton.isSelected = !favoriteButton.isSelected
         }
     }
 }

@@ -6,8 +6,7 @@ target 'Trakt' do
   use_frameworks!
 
 	pod 'RealmSwift'
-	pod 'Alamofire'
-	pod 'ObjectMapper'
+    pod 'AlamofireObjectMapper'
     pod 'Kingfisher'
 
   target 'TraktTests' do

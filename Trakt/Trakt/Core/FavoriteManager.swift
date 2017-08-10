@@ -17,6 +17,7 @@ class FavoriteManager {
         favorite.title = movie.title
         favorite.imageURL = imageURL
         favorite.year = movie.year
+        favorite.slug = movie.ids?.slug ?? ""
         
         let realm = try? Realm()
         try? realm?.write {

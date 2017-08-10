@@ -15,4 +15,5 @@ class Favorite: Object {
     dynamic var title = ""
     dynamic var year = 0
     dynamic var imageURL = ""
+    dynamic var slug = ""
 }

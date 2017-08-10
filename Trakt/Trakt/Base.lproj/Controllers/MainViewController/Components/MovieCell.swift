@@ -14,6 +14,7 @@ struct MovieDTO {
     var title = ""
     var year = ""
     var traktId: Int?
+    var slug = ""
     var isSelected = false
     weak var delegate: FavoriteDelegate?
 }
@@ -25,6 +26,7 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
     var traktId: Int?
+    var slug = ""
     
     private weak var delegate: FavoriteDelegate?
     
@@ -35,6 +37,7 @@ class MovieCell: UICollectionViewCell {
         titleLbl.text = dto.title
         yearLbl.text = dto.year
         traktId = dto.traktId
+        slug = dto.slug
         favoriteButton.isSelected = dto.isSelected
         fillImage(imageURL: dto.imageURL)
     }

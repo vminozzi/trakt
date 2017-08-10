@@ -14,6 +14,12 @@ struct Movie: Mappable {
     var title = ""
     var year = 0
     var ids: Ids?
+    var released = ""
+    var runtime = 0
+    var tagline = ""
+    var overview = ""
+    var rating = 0.0
+    var genres = [""]
     
     init() {
         
@@ -33,5 +39,11 @@ struct Movie: Mappable {
         title <- map["title"]
         year <- map["year"]
         ids <- map["ids"]
+        released <- map["released"]
+        runtime <- map["runtime"]
+        tagline <- map["tagline"]
+        overview <- map["overview"]
+        rating <- map["rating"]
+        genres <- map["genres"]
     }
 }

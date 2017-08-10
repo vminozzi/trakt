@@ -16,11 +16,6 @@
 		A01432891F3BE121001B64E6 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01432881F3BE121001B64E6 /* Favorite.swift */; };
 		A014328B1F3BE1D0001B64E6 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014328A1F3BE1D0001B64E6 /* FavoriteManager.swift */; };
 		A0245A991F37AA09005B7926 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0245A981F37AA09005B7926 /* Request.swift */; };
-		A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C44091F37B98400F1FAB6 /* Alamofire.framework */; };
-		A05C440F1F37B98400F1FAB6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440A1F37B98400F1FAB6 /* ObjectMapper.framework */; };
-		A05C44101F37B98400F1FAB6 /* Pods_TraktTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440B1F37B98400F1FAB6 /* Pods_TraktTests.framework */; };
-		A05C44111F37B98400F1FAB6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440C1F37B98400F1FAB6 /* Realm.framework */; };
-		A05C44121F37B98400F1FAB6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05C440D1F37B98400F1FAB6 /* RealmSwift.framework */; };
 		A05C44171F3947FA00F1FAB6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44161F3947FA00F1FAB6 /* Movie.swift */; };
 		A05C44191F39495500F1FAB6 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C44181F39495500F1FAB6 /* Ids.swift */; };
 		A08853631F3681DD006609FF /* TraktTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08853621F3681DD006609FF /* TraktTests.swift */; };
@@ -32,7 +27,6 @@
 		A0B9294D1F39578F00217039 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9294C1F39578F00217039 /* CollectionViewCell+Extension.swift */; };
 		A0B9294F1F39583500217039 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9294E1F39583500217039 /* Array+Extension.swift */; };
 		A0B929511F3958FE00217039 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B929501F3958FE00217039 /* Loader.swift */; };
-		A0B929531F3A98CD00217039 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B929521F3A98CD00217039 /* Kingfisher.framework */; };
 		A0B929551F3AB1C900217039 /* String+ImageRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B929541F3AB1C900217039 /* String+ImageRender.swift */; };
 		FEBB2613F4297D042E50A5CE /* Pods_TraktTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB5087A4AE6C2D2ECA923B4 /* Pods_TraktTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,12 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B929531F3A98CD00217039 /* Kingfisher.framework in Frameworks */,
-				A05C440E1F37B98400F1FAB6 /* Alamofire.framework in Frameworks */,
-				A05C440F1F37B98400F1FAB6 /* ObjectMapper.framework in Frameworks */,
-				A05C44101F37B98400F1FAB6 /* Pods_TraktTests.framework in Frameworks */,
-				A05C44111F37B98400F1FAB6 /* Realm.framework in Frameworks */,
-				A05C44121F37B98400F1FAB6 /* RealmSwift.framework in Frameworks */,
 				3B8E87CA95BD4A3BA870DC8D /* Pods_Trakt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

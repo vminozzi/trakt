@@ -56,12 +56,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell: MovieCell = MovieCell.createCell(collectionView: collectionView, indexPath: indexPath)
         cell.fill(dto: viewModel.dtoForRow(row: indexPath.row))
         
-        
-        if indexPath.row == viewModel.numberOfRows() - 1 {
+        if indexPath.row == viewModel.numberOfRows() - 1 && viewModel.shouldMakeRequest {
             showLoader()
             viewModel.loadMore()
         }
-        
         
         return cell
     }

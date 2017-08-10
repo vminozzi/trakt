@@ -12,7 +12,7 @@ import UIKit
 extension UIViewController {
     
     func showLoader() {
-        let loader = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let loader = UIActivityIndicatorView(activityIndicatorStyle: .white)
         loader.center = view.center
         UIApplication.shared.keyWindow?.addSubview(loader)
         loader.startAnimating()

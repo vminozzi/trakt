@@ -106,10 +106,11 @@ class HomeViewModel: FavoriteDelegate {
                         title: movie.title,
                         year: "\(movie.year)",
                         traktId: movie.ids?.tmdb,
+                        slug: movie.ids?.slug ?? "",
                         isSelected: favorites?.filter { $0.traktId == movie.ids?.tmdb ?? 0 }.count ?? 0 > 0,
                         delegate: self)
     }
-    
+        
     // MARK - FavoriteDelegate
     
     func didFavorite(trakId: Int) {

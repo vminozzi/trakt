@@ -14,7 +14,8 @@ typealias JSONDictionary = [String: Any]
 
 class Request {
     
-    private let traktAPI = "https://api.trakt.tv/movies/popular"
+    private let traktAPI = "https://api.trakt.tv/movies/"
+    private let popular = "popular"
     private let imageURL = "https://api.themoviedb.org/3/movie/"
     private let searchURL = "https://api.trakt.tv/search/movie"
     private let imageAPIKey = "fabd1d13e13b8b25c567f0e097a4cb70"
@@ -26,7 +27,7 @@ class Request {
     ]
     
     func getMovies(page: Int, completion: @escaping ((_ movies: [Movie]?) -> ())) {
-        Alamofire.request(traktAPI, parameters: ["page": "\(page)", "limit": "10"],
+        Alamofire.request(traktAPI + popular, parameters: ["page": "\(page)", "limit": "10"],
                           headers: traktHeaders).responseJSON { response in
             if let _ = response.result.error {
                 completion(nil)
@@ -73,6 +74,21 @@ class Request {
                 var movies = [Movie]()
                 json.forEach { movies.append(Movie(searchMap: Map(mappingType: .fromJSON, JSON: $0)) ?? Movie()) }
                 completion(movies)
+                return
+            }
+            completion(nil)
+        }
+    }
+    
+    func getMovieDetail(slug: String, completion: @escaping ((_ movies: Movie?) -> ())) {
+        Alamofire.request(traktAPI + slug, parameters: ["extended": "full"], headers: traktHeaders).responseJSON { response in
+            if let _ = response.result.error {
+                completion(nil)
+                return
+            }
+            
+            if let json = response.result.value as? JSONDictionary {
+                completion(Movie(JSON: json))
                 return
             }
             completion(nil)

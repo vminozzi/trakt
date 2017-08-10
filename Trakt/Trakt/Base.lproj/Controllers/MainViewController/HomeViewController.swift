@@ -14,7 +14,7 @@ protocol LoadContent: class {
 }
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, LoadContent, LoadFavorite {
-
+    
     // MARK: - Attributes
     
     lazy private var viewModel: HomeViewModel = HomeViewModel(delegate: self, favoriteDelegate: self)
@@ -64,18 +64,37 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MovieCell else {
+            return
+        }
+        performSegue(withIdentifier: "showDetail", sender: cell.slug)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.width / 2) - 15, height: 230)
     }
-
+    
     
     // MARK: - LoadContent
     
     func didLoadContent(success: Bool) {
+        DispatchQueue.main.async {
+            self.dismissLoader()
+        }
+        
         if success {
             DispatchQueue.main.async {
-                self.dismissLoader()
                 self.collectionView?.reloadData()
+            }
+        } else {
+            let alert = UIAlertController(title: "Ops", message: "Something went wrong :(", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { _ in
+                self.load()
+            }))
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -101,7 +120,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         viewModel.seachRequest(text: searchText)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailViewController = segue.destination as? DetailViewController, let slug = sender as? String {
+            detailViewController.slug = slug
+        }
     }
 }

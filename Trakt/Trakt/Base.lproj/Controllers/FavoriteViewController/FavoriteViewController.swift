@@ -48,12 +48,27 @@ class FavoriteViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: (view.frame.width / 2) - 15, height: 230)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MovieCell else {
+            return
+        }
+        performSegue(withIdentifier: "showDetail", sender: cell.slug)
+    }
+    
     
     // MARK: - LoadFavorite
     
     func didLoadFavorites() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+        }
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailViewController = segue.destination as? DetailViewController, let slug = sender as? String {
+            detailViewController.slug = slug
         }
     }
 }

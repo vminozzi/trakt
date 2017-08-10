@@ -40,9 +40,10 @@ class FavoriteViewModel: FavoriteDelegate {
         return MovieDTO(imageURL: favorite.imageURL,
                         title: favorite.title,
                         year: "\(favorite.year)",
-            traktId: favorite.traktId,
-            isSelected: favorites?.filter { $0.traktId == favorite.traktId }.count ?? 0 > 0,
-            delegate: self)
+                        traktId: favorite.traktId,
+                        slug: favorite.slug,
+                        isSelected: favorites?.filter { $0.traktId == favorite.traktId }.count ?? 0 > 0,
+                        delegate: self)
     }
     
     // MARK: - FavoriteDelegate

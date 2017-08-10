@@ -28,7 +28,7 @@ class HomeViewModel: FavoriteDelegate {
     private var imageCache = ImageCache() 
     
     private var page = 1
-    private var shouldMakeRequest = true
+    var shouldMakeRequest = true
     
     
     init(delegate: LoadContent, favoriteDelegate: LoadFavorite) {
@@ -50,8 +50,7 @@ class HomeViewModel: FavoriteDelegate {
             if let movies = movies {
                 self.shouldMakeRequest = movies.count > 0
                 movies.forEach { self.movies.append($0) }
-                self.imagesRequest()
-                
+                self.imagesRequest(movies: movies)
             }
             self.delegate?.didLoadContent(success: movies != nil)
         }
@@ -69,7 +68,7 @@ class HomeViewModel: FavoriteDelegate {
             request.searchMovie(query: text) { movies in
                 if let movies = movies {
                     self.resultMovies = movies
-                    self.imagesRequest()
+                    self.imagesRequest(movies: movies)
                     self.delegate?.didLoadContent(success: true)
                 }
             }
@@ -80,8 +79,7 @@ class HomeViewModel: FavoriteDelegate {
         }
     }
     
-    func imagesRequest() {
-        let movies = resultMovies.count > 0 ? resultMovies : self.movies
+    func imagesRequest(movies: [Movie]) {
         movies.forEach { movie in request.getImages(traktId: movie.ids?.tmdb, completion: { imageURL in
             if let tmdb = movie.ids?.tmdb, let imageURL = imageURL {
                 self.imageCache[tmdb] = imageURL
